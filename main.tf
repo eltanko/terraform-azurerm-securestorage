@@ -9,6 +9,16 @@ terraform {
   }
 }
 
+terraform {
+  cloud {
+    organization = "dh-az-terraform"
+
+    workspaces {
+      name = "Hands_On_With_Terraform_On_Azure"
+    }
+  }
+}
+
 resource "azurerm_storage_account" "securestorage" {
   resource_group_name           = var.resource_group_name
   location                      = var.location
